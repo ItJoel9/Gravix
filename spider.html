@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel's Spider-Man - Gravix</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="logo (2).png">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('sp1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Dark overlay for readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+            z-index: 2; /* Ensure content is above the overlay */
+        }
+
+        .game-details {
+            width: 55%;
+            background-color: rgba(34, 34, 34, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .game-details h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .game-details p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #DA0037;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #DA0037;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background-color: #FF4056;
+            transform: translateY(-3px);
+        }
+
+        .features {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .features ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .features ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Trailer Section */
+        .trailer-section {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .trailer-section iframe {
+            width: 100%;
+            height: 315px; /* Set a fixed height for the trailer */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better visibility */
+        }
+
+        /* Gradient Fade for the Image on the Right */
+        .fade-image {
+            width: 40%;
+            position: relative;
+        }
+
+        .fade-image img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        /* Vertical gradient fade effect */
+        .fade-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* Vertically fading gradient */
+            z-index: 2;
+            border-radius: 15px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game-details {
+                width: 100%;
+            }
+
+            .fade-image {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .game-details h2 {
+                font-size: 2.2rem;
+            }
+
+            .game-details p {
+                font-size: 1.1rem;
+            }
+
+            .price {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <!-- Game Details Section -->
+        <div class="game-details">
+            <h2>Marvel's Spider-Man</h2>
+
+            <!-- Gameplay Trailer Section -->
+            <div class="trailer-section">
+                <h3>Watch the Gameplay Trailer of Marvel's Spider-Man</h3>
+                <iframe src="https://www.youtube.com/embed/q4GdJVvdxss" title="Marvel's Spider-Man Gameplay Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <p>
+                Swing through the vibrant streets of New York City as Spider-Man. Experience thrilling combat, a gripping story, and a richly detailed open world in this blockbuster action-adventure game.
+            </p>
+            <div class="price">$49.99</div>
+
+            <!-- Additional Game Features -->
+            <div class="features">
+                <h3>Game Features:</h3>
+                <ul>
+                    <li>Open-world traversal and exploration</li>
+                    <li>Dynamic combat with web-swinging mechanics</li>
+                    <li>Engaging narrative with memorable characters</li>
+                    <li>High-quality graphics and city details</li>
+                    <li>Exciting side missions and challenges</li>
+                </ul>
+            </div>
+
+            <!-- Buy Now Button -->
+            <a href="buy.html" class="buy-button">Buy Now</a>
+
+            <!-- Back Link -->
+            <a href="web_Gravix.html" class="buy-button" style="margin-top: 15px;">Back to Store</a>
+        </div>
+
+        <!-- Right-side Image with Vertical Gradient Fade -->
+        <div class="fade-image">
+            <img src="sp2.jpg" alt="Spider-Man Alternate Image">
+        </div>
+    </div>
+
+</body>
+</html>

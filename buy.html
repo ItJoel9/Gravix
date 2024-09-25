@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insufficient Balance - Gravix</title>
+ <link rel="icon" type="image/png" sizes="32x32" href="logo (2).png">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('err.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Dark overlay for readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .message-container {
+            background-color: rgba(34, 34, 34, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            max-width: 400px;
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .message-container h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .message-container p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .back-button {
+            padding: 15px 30px;
+            background-color: #DA0037;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #FF4056;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-container">
+        <h1>Insufficient Balance</h1>
+        <p>Sorry, but you are broke. Please add more funds to your account.</p>
+        <a href="web_Gravix.html" class="back-button">Back to Store</a>
+    </div>
+
+</body>
+</html>

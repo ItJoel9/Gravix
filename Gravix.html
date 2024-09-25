@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravix Game Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Streams</a></li>
+                <li><a href="#">Game Store</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+            <div class="user-cart">
+                <i class="icon-cart">🛒</i>
+                <i class="icon-user">👤</i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><input type="checkbox" id="adventure"> Adventure</li>
+                <li><input type="checkbox" id="strategy"> Strategy</li>
+                <!-- More categories -->
+            </ul>
+
+            <h2>Platforms</h2>
+            <ul>
+                <li><input type="checkbox" id="ps4"> PlayStation 4</li>
+                <li><input type="checkbox" id="ps5"> PlayStation 5</li>
+                <!-- More platforms -->
+            </ul>
+
+            <h2>Price</h2>
+            <div>
+                <label for="min-price">$</label>
+                <input type="number" id="min-price" value="40">
+                <label for="max-price">$</label>
+                <input type="number" id="max-price" value="60">
+            </div>
+
+            <button onclick="applyFilters()">Apply Filters</button>
+        </aside>
+
+        <main>
+            <section class="featured-game">
+                <img src="https://example.com/horizon-image.jpg" alt="Horizon Forbidden West">
+                <h1>Horizon Forbidden West</h1>
+            </section>
+
+            <section class="game-cards">
+                <div class="game-card">
+                    <img src="https://example.com/spiderman.jpg" alt="Marvel's Spider-Man">
+                    <p>Marvel's Spider-Man - PS5</p>
+                    <p class="price">$51</p>
+                    <button>Buy</button>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://example.com/little-nightmares.jpg" alt="Little Nightmares 2">
+                    <p>Little Nightmares 2 - PS4</p>
+                    <p class="price">$40</p>
+                    <button>Buy</button>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://example.com/ghost-tsushima.jpg" alt="Ghost of Tsushima">
+                    <p>Ghost of Tsushima - PS4</p>
+                    <p class="price">$48</p>
+                    <button>Buy</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Gravix Game Store</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

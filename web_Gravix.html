@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravix - Game Store</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="logo (2).png">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #171717;
+            color: #FFFFFF;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar styles */
+        ::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #444444;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #DA0037;
+            border-radius: 10px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #000000, #444444); /* Blackish gradient */
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header a img {
+            max-width: 50px;
+            height: auto;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #DA0037;
+        }
+
+        /* Main banner */
+        .main-banner {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: left;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .main-banner img.hidden {
+            opacity: 0;
+        }
+
+        /* Welcome message section */
+        .welcome-section {
+            padding: 30px;
+            text-align: center;
+            background-color: #222222;
+            margin-bottom: 20px;
+            color: #F1F1F1;
+        }
+
+        .welcome-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #DA0037;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Scrollable section */
+        .content {
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, rgba(218, 0, 55, 0.8), rgba(0, 0, 0, 1)); /* Reddish gradient */
+            color: #FFFFFF;
+            display: flex;          /* Use flexbox */
+            flex-direction: column; /* Keep the content in a column */
+            align-items: center; /* Center content horizontally */
+        }
+
+        .content h3 {
+            font-size: 1.8rem;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+            text-align: center; /* Center the title */
+            width: 100%;      /* Ensure title takes full width */
+        }
+
+        /* Game Cards Container */
+        .game-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Center game cards */
+            width: 100%;
+        }
+
+        /* Game Card */
+        .game-card {
+            flex: 1 1 calc(25% - 20px);
+            max-width: 250px;
+            background-color: #444444;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modern Footer */
+        footer {
+            background-color: #222222;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        footer .social-icons {
+            margin-bottom: 20px;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        footer .social-icons a img {
+            width: 40px;
+            height: 40px;
+            filter: invert(100%);
+            transition: transform 0.3s;
+        }
+
+        footer .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        footer p {
+            color: #999999;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        footer p a {
+            color: #DA0037;
+            text-decoration: none;
+        }
+
+        footer p a:hover {
+            text-decoration: underline;
+        }
+
+        footer p.copy {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        footer img.logo {
+            width: 60px; /* Adjust size as needed */
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <a href="login.html"><img src="logo (2).png" alt="Gravix Logo"></a>
+        <nav>
+            <a href="web_Gravix.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="main-banner">
+        <!-- Slideshow Images -->
+        <img src="ghost-of-tsushima.jpg" alt="Ghost of Tsushima" class="slide">
+        <img src="eldenb.jpeg" alt="Elden Ring" class="slide hidden">
+        <img src="sp1.jpg" alt="Spider Man" class="slide hidden">
+        <img src="gow1.jpg" alt="God of War Ragnarok" class="slide hidden">
+        <img src="lou.jpg" alt="The Last of Us" class="slide hidden">
+        <img src="rdr22.jpg" alt="Red Dead Redemption 2" class="slide hidden">
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <h3>Welcome to Gravix</h3>
+        <p>Discover the latest and greatest games at Gravix! We are passionate about bringing you the best gaming experiences, from epic adventures to thrilling action. Dive into our collection of handpicked games and enjoy exploring new worlds!</p>
+    </section>
+
+    <!-- Horizontal Scrolling Game Cards Section -->
+    <section class="content">
+        <h3>Popular on Gravix</h3>
+        <div class="game-cards">
+            <!-- Game Cards -->
+            <a href="gow.html" class="game-card"><img src="gow.jpg" alt="God of War Ragnarok"></a>
+            <a href="spider.html" class="game-card"><img src="spider man.jpg" alt="Marvel Spider-Man"></a>
+            <a href="last.html" class="game-card"><img src="last of us.jpg" alt="The Last of Us"></a>
+            <a href="ghost.html" class="game-card"><img src="ghost-of-tsushima.jpg" alt="Ghost of Tsushima"></a>
+            <a href="rdr2.html" class="game-card"><img src="red-dead-redemption-2.jpg" alt="Red Dead Redemption 2"></a>
+            <a href="elden.html" class="game-card"><img src="elden ring.jpg" alt="Elden Ring"></a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Social Media Icons -->
+        <p>Stay connected with us on social media for updates and more!</p>
+        <img src="logo (2).png" alt="Gravix Logo" class="logo">
+        <p class="copy">&copy; 2024 <a href="#">Gravix</a>. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.main-banner .slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides[currentIndex].classList.add('hidden'); // Hide the current slide
+            currentIndex = (currentIndex + 1) % totalSlides; // Move to the next slide, loop back to 0 if at the last slide
+            slides[currentIndex].classList.remove('hidden'); // Show the next slide
+        }
+
+        // Automatically change slides every 5 seconds (5000 milliseconds)
+        setInterval(showNextSlide, 5000);
+    </script>
+
+</body>
+</html>
